@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>USDZ 모델 보기</title>
+  <title>AR 모델 보기</title>
   <style>
     body {
       font-family: sans-serif;
@@ -30,7 +30,7 @@
   <h1>📦 AR 모델 보기</h1>
   <p>아래 버튼을 누르면 AR 뷰어로 실행됩니다.</p>
 
-  <!-- 공통 버튼 -->
+  <!-- AR 보기 버튼 -->
   <a id="arLink" href="#">AR로 보기</a>
 
   <p style="margin-top: 20px; color: #666;">* iOS Safari 또는 Android Chrome에서 작동합니다.</p>
@@ -46,9 +46,9 @@
       arLink.href = "SM_SquareGrass.usdz";
       arLink.setAttribute("rel", "ar");
     } else if (isAndroid) {
-      const glbUrl = "https://example.com/SM_SquareGrass.glb"; // 여기에 실제 .glb 주소 입력
+      const glbFile = location.origin + location.pathname.replace(/\/[^\/]*$/, '/SM_SquareGrass.glb');
       arLink.href =
-        `intent://arvr.google.com/scene-viewer/1.0?file=${encodeURIComponent(glbUrl)}&mode=ar_preferred#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=${encodeURIComponent(glbUrl)};end;`;
+        `intent://arvr.google.com/scene-viewer/1.0?file=${encodeURIComponent(glbFile)}&mode=ar_preferred#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=${encodeURIComponent(glbFile)};end;`;
     } else {
       arLink.href = "#";
       arLink.textContent = "AR은 iOS 또는 Android 기기에서만 지원됩니다.";
