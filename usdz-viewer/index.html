@@ -43,10 +43,10 @@
     const isAndroid = /Android/.test(userAgent);
 
     if (isIOS) {
-      arLink.href = "SM_SquareGrass.usdz";
+      arLink.href = "SM_SquareGrass_01.usdz";
       arLink.setAttribute("rel", "ar");
     } else if (isAndroid) {
-      const glbFile = location.origin + location.pathname.replace(/\/[^\/]*$/, '/SM_SquareGrass.glb');
+      const glbFile = location.origin + location.pathname.replace(/\/[^\/]*$/, '/SM_SquareGrass_01.glb');
       arLink.href =
         `intent://arvr.google.com/scene-viewer/1.0?file=${encodeURIComponent(glbFile)}&mode=ar_preferred#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=${encodeURIComponent(glbFile)};end;`;
     } else {
