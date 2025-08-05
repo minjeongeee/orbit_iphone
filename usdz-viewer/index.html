@@ -28,7 +28,7 @@
 </head>
 <body>
   <h1>📦 AR 모델 보기</h1>
-  <p>아래 버튼을 누르면 AR 뷰어로실행12/anim</p>
+  <p>아래 버튼을 누르면 AR 뷰어로실행/anim</p>
 
   <!-- AR 보기 버튼 -->
   <a id="arLink" href="#">AR로 보기</a>
@@ -46,7 +46,7 @@
       arLink.href = "OrbitFlower.usdz";
       arLink.setAttribute("rel", "ar");
     } else if (isAndroid) {
-      const glbFile = location.origin + location.pathname.replace(/\/[^\/]*$/, '/Orbitflower_vv.glb');
+      const glbFile = location.origin + location.pathname.replace(/\/[^\/]*$/, '/Orbitflower_FINAL.glb');
       arLink.href =
         `intent://arvr.google.com/scene-viewer/1.0?file=${encodeURIComponent(glbFile)}&mode=ar_preferred#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=${encodeURIComponent(glbFile)};end;`;
     } else {
@@ -57,4 +57,5 @@
   </script>
 </body>
 </html>
+
 
